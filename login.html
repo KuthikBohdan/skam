@@ -1,9 +1,14 @@
-<form action="mail_script.php" method="post">
 
-<p>Ваше ім'я: <input type="text" name="name" /></p>
-
-<p>Номер телефону: <input type="tel" name="telephone" /></p>
-
-<p><input type="submit" /></p>
-
+<html>
+<head>
+  <title>Форма обратной связи</title>
+</head>
+<body>
+  <form method="post">
+Ваше имя: <input type="text" name="name" placeholder="Иван">
+Email для связи: <input type="email" name="email" placeholder="адрес электронной почты">
+Ваше сообщение: <textarea name="message" rows="5"></textarea>
+<input type="submit" value="отправить">
 </form>
+</body>
+</html>
