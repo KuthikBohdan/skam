@@ -1,27 +1,25 @@
 <?php
-$name = $_POST['name'];
-$tel = $_POST['telephone'];
+// несколько получателей
+$to  = ' bkuzik7gmail.com' . ', ';  // обратите внимание на запятую
+$to .= 'wez@example.com';
 
-$name = htmlspecialchars($name);
-$tel = htmlspecialchars($tel);
+// тема письма
+$subject = 'Письмо с моего сайта';
 
-$name = urlencode($name);
-$ tel = urlencode ($ tel);
+// текст письма
+$message = 'Пользователь' . $_POST['name'] . ' отправил вам письмо:<br />' . $_POST['message'] . '<br />
+Связяться с ним можно по email <a href="mailto:' . $_POST['email'] . '">' . $_POST['email'] . '</a>'
+;
 
-$ name = trim ($ name);
-$ tel = trim ($ tel);
+// Для отправки HTML-письма должен быть установлен заголовок Content-type
+$headers  = 'MIME-Version: 1.0' . "\r\n";
+$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n"; 
 
-if (mail("to_mail@mail.ru",
-     "Pest Reject",
-     "Ім'я: ".$name."\n".
-     "Телефон".
-     "From: script@mail.ru \r\n")
-) {
-     header("Location: /thank_you.html");
-}
+// Дополнительные заголовки
+$headers .= 'To: Иван <Ivan@example.com>' . "\r\n"; // Свое имя и email
+$headers .= 'From: '  . $_POST['name'] . '<' . $_POST['email'] . '>' . "\r\n";
 
-else {
-     echo ("Error");
-}
 
+// Отправляем
+mail($to, $subject, $message, $headers);
 ?>
