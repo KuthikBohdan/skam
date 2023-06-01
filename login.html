@@ -1,15 +1,15 @@
-
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
-  <title>Форма обратной связи</title>
+<title>Форма заявки с сайта</title>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
-  <form method="post">
-Ваше имя: <input type="text" name="name" placeholder="Иван">
-Email для связи: <input type="email" name="email" placeholder="адрес электронной почты">
-Ваше сообщение: <textarea name="message" rows="5"></textarea>
-<input type="submit" value="отправить">
-</form>
+<form action="send.php" method="post">
+<input placeholder="Ваше имя" type="text" name="fio" required>
+<input placeholder="Ваш e-mail" type="email" name="email">
+<textarea name="message" cols="50" rows="10" placeholder="Напишите ваше сообщение сюда..."></textarea>
+<div class="g-recaptcha" data-sitekey="ключ сайта"></div>
+<input type="submit" value="Отправить">
+</form> 
 </body>
 </html>
