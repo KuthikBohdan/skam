@@ -1,15 +1,21 @@
+<!DOCTYPE html>
 <html>
-<head>
-<title>Форма заявки с сайта</title>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-</head>
 <body>
-<form action="send.php" method="post">
-<input placeholder="Ваше имя" type="text" name="fio" required>
-<input placeholder="Ваш e-mail" type="email" name="email">
-<textarea name="message" cols="50" rows="10" placeholder="Напишите ваше сообщение сюда..."></textarea>
-<div class="g-recaptcha" data-sitekey="ключ сайта"></div>
-<input type="submit" value="Отправить">
+
+<h2>HTML Forms</h2>
+
+<form action="/action_page.php">
+  First name:<br>
+  <input type="text" name="firstname" value="Mickey">
+  <br>
+  Last name:<br>
+  <input type="text" name="lastname" value="Mouse">
+  <br><br>
+  <input type="submit" value="Submit">
 </form> 
+
+<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+
 </body>
 </html>
+
